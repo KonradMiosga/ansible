@@ -1,0 +1,16 @@
+- hosts: localhost
+  vars:
+    source_key: "./.ssh/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+  pre_tasks:
+    - name: Update Brew
+      community.general.homebrew:
+        update_homebrew: true
+        upgrade_all: true
+        state: present
+      tags:
+      - install
+      - core
+  tasks:
+    - include: tasks/ssh.yml
+
