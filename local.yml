@@ -12,5 +12,6 @@
       - install
       - core
   tasks:
-    - include: tasks/ssh.yml
+    - import_tasks: tasks/ssh.yml
+    - import_tasks: tasks/nvim-setup.yml
 

@@ -1,2 +1,6 @@
 #!/usr/bin/env bash
-brew install git ansible 
+brew update
+brew install ansible cmake 
+
+ansible-playbook --check local.yml --ask-vault-pass
+
