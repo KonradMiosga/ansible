@@ -4,15 +4,14 @@
     dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
   pre_tasks:
     - name: Update Brew
-      community.general.homebrew:
+      homebrew:
         update_homebrew: true
-        upgrade_all: true
         state: present
       tags:
       - install
       - core
   tasks:
     - import_tasks: tasks/ssh.yml
-    - import_tasks: tasks/nvim-setup.yml
     - import_tasks: tasks/git-setup.yml
+    - import_tasks: tasks/nvim-setup.yml
 
