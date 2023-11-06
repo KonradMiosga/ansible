@@ -1,0 +1,27 @@
+- name: Install System Packages 1
+  homebrew:
+    name: ["tmux","tldr","lf","fzf","jesseduffield/lazygit/lazygit","ripgrep","curl"]
+    state: present
+    update_homebrew: yes
+    tags: 
+      - install
+      - core
+
+- name: Install System Packages 2
+  homebrew_cask:
+    name: ["alacritty","mactex-no-gui", "rectangle"]
+    state: present
+    update_homebrew: yes
+    tags:
+      - install
+      - core
+
+- name: Install System Packages 3
+  homebrew_cask:
+    name: ["cmake"]
+    state: present
+    update_homebrew: yes
+    tags:
+      - install
+      - core
+      - neovim
